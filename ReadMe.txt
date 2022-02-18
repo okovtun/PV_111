@@ -6,7 +6,10 @@ Escape sequences:
 https://docs.microsoft.com/ru-ru/cpp/c-language/escape-sequences?view=msvc-170
 
 TODO:
-1. Почитать про системы счисления: 
+1. Почитать про системы счисления: https://github.com/okovtun/PV_111/blob/master/DataTypes/NumericSystems.pdf
+2. Изучить типы данных, можно дополнительно почитать здесь:
+	https://github.com/okovtun/PV_111/blob/master/DataTypes/DataTypes.pdf
+IEEE-754:https://www.softelectro.ru/ieee754.html
 
 DONE:
 В новом проекте написать программу, которая выводит в консоль стишок "В лесу родилась Ёлочка".
