@@ -29,3 +29,11 @@ type - тип объ€вл€емой переменной.
 	  long
 	  int
 	  long long
+
+identifier - это им€.
+
+1. ABC...Zabc...z0123...9_
+2. 
+3. 
+
+
