@@ -4,6 +4,8 @@ using namespace std;
 
 //#define BOOLEAN
 //#define INTEGRAL_TYPES
+//#define DATA_TYPES
+//#define CONSTANTS
 
 void main()
 {
@@ -24,8 +26,9 @@ void main()
 	cout << 0 << "..." << USHRT_MAX << endl;
 #endif
 
+#ifdef DATA_TYPES
 	//float		- дробное число одинарной точности	4 Bytes
-	//double	- дробное число двойной точности	8 Bytes
+//double	- дробное число двойной точности	8 Bytes
 	cout << "float:\n";
 	cout << sizeof(float) << endl;
 	cout << FLT_MIN << " ... " << FLT_MAX << endl;
@@ -43,5 +46,31 @@ void main()
 	//инициализация - это присвоение начального значения.
 	cout << "Введите стоимость кофе: ";
 	cin >> price_of_coffee;
-	//cin - Console Input, поток ввода с клавиатуры
+	//cin - Console Input, поток ввода с клавиатуры  
+#endif // DATA_TYPES
+
+#ifdef CONSTANTS
+	int t;
+	unsigned int speed = 0;			//переменное значение
+	const unsigned int MAX_SPEED = 250;	//постоянное значение
+
+	5;	//Числовая константа типа int
+	5.;	//Числовая константа типа double
+	5.f;//Числовая константа типа float
+	5U;	//unsigned int
+	5ULL;//unsigned long long
+	5ull;//unsigned long long
+
+	//ASCII-код
+	'+';	//символная константа (типа char)
+	"+";	//строковая константа
+	cout << sizeof('+') << endl;
+	cout << sizeof("+") << endl;
+	cout << sizeof("Hello") << endl;
+#endif // CONSTANTS
+
+	-3;		//unary minus
+	8 - 3;	//binary minus
+	8 * 3;	//multiply
+	//*3;	//
 }

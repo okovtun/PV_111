@@ -2,6 +2,14 @@
 https://www.youtube.com/watch?v=Wvi83_sg_uA&list=PLeqyOOqxeiIPpnd7D0trsnWlc1vVZPTvQ
 https://meet.google.com/mho-khdw-fhj
 
+TODO:
+Написать калькулятор, в который можно ввести выражение вида 2 + 3
+и он выдаст результат, например:
+2 + 3 = 5
+
+DataTypes:
+https://www.youtube.com/watch?v=dWQ25Tk8nwM&list=PLeqyOOqxeiIOAG3qbhOXnDsG1pU5q6cyx
+
 Escape sequences:
 https://docs.microsoft.com/ru-ru/cpp/c-language/escape-sequences?view=msvc-170
 
