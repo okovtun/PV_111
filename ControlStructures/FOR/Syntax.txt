@@ -1,0 +1,8 @@
+
+for(counter; condition; expression)
+{
+	...
+	group-of-statements;
+	...
+}
+counter - это счетчик цикла.

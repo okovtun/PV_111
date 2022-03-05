@@ -1,87 +1,108 @@
 #include<iostream>
-using namespace std;
+#include<conio.h>
+//using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
 
-#define PALINDROM
-//#define BILET
+//#define PALINDROME
+//#define SHOOTER
+#define SHOOTER_2
+//#define TICKET_NUMBER
+
 
 void main()
 {
-	setlocale(LC_ALL, "");
+	setlocale(LC_ALL, "Russian");
+#ifdef PALINDROME
+	int number; // число вводимое с клавиатуры
+	int reverse = 0; // обратная запись введенного числа
+	cout << "Введите число: "; cin >> number;
+	int buffer = number;
+	while (buffer)
+	{
+		reverse *= 10; // освобождаем место под младший разряд
+		reverse += buffer % 10; // получаем младший рзаряд числа, и сохраняем его
+		buffer /= 10; // убираем сохраненный разряд
 
-#ifdef PALINDROM
-	int x, a, b, c, d, i;
-	cout << "Введите число: "; cin >> x;
-
-	if (x >= 0 && x < 10)
-		cout << "Данное число - палиндром" << endl;
+	}
+	cout << number << endl;
+	cout << reverse << endl;
+	if (number == reverse)
+	{
+		cout << "Число палиндром" << endl;
+	}
 	else
-		cout << "Данное число - не палиндром" << endl;
-	x = 0;
-
-	while (x >= 10 && x < 100)
 	{
-		a = x / 10;
-		c = x % 10;
-
-		if (a == c) cout << "Данное число - палиндром" << endl;
-		else
-			cout << "Данное число - не палиндром" << endl;
-		x = 0;
+		cout << "Число НЕ палиндром" << endl;
 	}
+#endif
 
-	while (x >= 100 && x < 1000)
+#ifdef SHOOTER
+	char key;	//код клавиши
+	do
 	{
-		a = x / 100;
-		b = x % 100 / 10;
-		c = x % 10;
+		key = _getch();
+		cout << int(key) << "\t" << key << endl;
+		if (key == 'w' || key == 'W') cout << "Вперед" << endl;
+		else if (key == 's' || key == 'S') cout << "Назад" << endl;
+		else if (key == 'a' || key == 'A') cout << "Влево" << endl;
+		else if (key == 'd' || key == 'D') cout << "Вправо" << endl;
+		else if (key == 32) cout << "Прыжок" << endl;
+		else if (key == 13) cout << "Огонь" << endl;
+		else cout << "Error: нет такого действия" << endl;
 
-		if (a == c) cout << "Данное число - палиндром" << endl;
-		else
-			cout << "Данное число - не палиндром" << endl;
-		x = 0;
-	}
+	} while (key != 27);
+#endif
 
-	while (x >= 1000 && x < 10000)
+#ifdef SHOOTER_2
+	char key;
+
+	key = _getch();
+	switch (int(key)
 	{
-		a = x / 1000;
-		b = x % 1000 / 100;
-		c = x % 100 / 10;
-		d = x % 10;
-		if (a == d && b == c) cout << "Данное число - палиндром" << endl;
-		else
-			cout << "Данное число - не палиндром" << endl;
-		x = 0;
-	}
-
-	while (x >= 10000 && x < 100000)
-	{
-		a = x / 10000;
-		b = x % 10000 / 1000;
-		i = x % 1000 / 100;
-		c = x % 100 / 10;
-		d = x % 10;
-		if (a == d && b == c) cout << "Данное число - палиндром" << endl;
-		else
-			cout << "Данное число - не палиндром" << endl;
-		x = 0;
+	case (key == 119): cout << "Впред" << endl;
+		break;
+	case (key == 115): cout << "Назад" << endl;
+		break;
+	case (key == 97): cout << "Влево" << endl;
+		break;
+	case (key == 100): cout << "Вправо" << endl;
+		break;
+	case (key == 32): cout << "Прыжок" << endl;
+		break;
+	case (key == 13): cout << "Прыжок" << endl;
+		break;
+		cout << "Error: нет такого действия" << endl;
 	}
 
 #endif
 
-#ifdef BILET
-	int x, a = 0, b = 0;
-	cout << "Введите номер билета: "; cin >> x;
-	for (int i = 0; i < 3; i++)
+#ifdef TICKET_NUMBER
+	int ticket_number;
+	int lucky_ticket_number = 0;
+	cout << "Введите номер билета: "; cin >> ticket_number;
+
+	while (ticket_number)
 	{
-		a = a + x % 10;
-		x = x / 10;
+		ticket_number > 0 && ticket_number < 10;
+
 	}
-	for (int i = 0; i < 3; i++)
+	do
 	{
-		b = b + x % 10;
-		x = x / 10;
+		lucky_ticket_number > 10;
+	} while (lucky_ticket_number);
+
+	cout << ticket_number << endl;
+	cout << lucky_ticket_number << endl;
+
+	if (ticket_number > lucky_ticket_number)
+	{
+		cout << "Счастливый билет" << endl;
 	}
-	if (a == b) cout << "Билет счастливый" << endl;
-	else cout << "Билет несчастливый " << endl;
+	else
+	{
+		cout << "Увы! Приходите в следующий раз." << endl;
+	}
 #endif
 }
