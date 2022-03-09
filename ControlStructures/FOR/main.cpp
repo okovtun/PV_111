@@ -1,12 +1,14 @@
 //FOR
 #include<iostream>
-using namespace std;
+//using namespace std;
 using std::cin;
 using std::cout;
-using std::endl;;
+using std::endl;
 
 //#define FOR_SYNTAX
 //#define FACTORIAL
+//#define POWER
+//#define ASCII
 
 void main()
 {
@@ -39,6 +41,69 @@ void main()
 	cout << endl;
 #endif // FACTORIAL
 
+#ifdef POWER
+	double a;		//Основание степени
+	int n;			//Показатель степени
+	double N = 1;	//Степень
+	cout << "Введите основание степени: "; cin >> a;
+	cout << "Введите показатель степени: "; cin >> n;
+	cout << a << " ^ " << n << " = ";
+	if (n < 0)
+	{
+		n = -n;		//меняем знак показателя на противоположный
+		a = 1 / a;	//переносим основание степени в знаменатель
+	}
+	for (int i = 0; i < n; i++)
+	{
+		N *= a;
+	}
+	cout << N << endl;
+#endif // POWER
+
+#ifdef ASCII
+	cout << "Таблица ASCII-символов:\n";
+	setlocale(LC_ALL, "C");	//Устанавливает кодировку по умолчанию
+	for (int i = 0; i < 256; i++)
+	{
+		if (i % 16 == 0)cout << endl;
+		cout << (char)i << " ";
+		//(char)i - это явное преоразование переменной 'i' в тип 'char'.
+	}
+	cout << endl;
+	setlocale(LC_ALL, "Russian");
+	cout << "Вот и сказочке конец" << endl;
+
+	/*int i = 0;
+	while (i < 256)
+	{
+		if (i % 16 == 0)cout << endl;
+		cout << (char)i << " ";
+		i++;
+	}
+	cout << endl;*/
+#endif // ASCII
+
+	/*double a = 0;
+	double b = 1;
+	double c = a + b;*/
+	//double a = 0, b = 1, c = a + b;
+	int n;	//предел
+	cout << "Введите количество чисел из ряда Фибоначчи: "; cin >> n;
+	/*for (int i = 0; i < n; i++)
+	{
+		cout << a << "\n";
+		a = b;
+		b = c;
+		c = a + b;
+	}*/
+
+	for (double a = 0, b = 1, c = a + b, i = 0; i < n; i++)
+	{
+		cout << a << "\n";
+		a = b;
+		b = c;
+		c = a + b;
+	}
 }
 
 /*
