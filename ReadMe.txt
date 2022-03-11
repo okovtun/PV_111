@@ -3,9 +3,10 @@ https://www.youtube.com/watch?v=Wvi83_sg_uA&list=PLeqyOOqxeiIPpnd7D0trsnWlc1vVZP
 https://meet.google.com/mho-khdw-fhj
 
 TODO:
-Вывести на экран все фигуры из этого файла: 
-https://github.com/okovtun/BV_011/blob/master/ControlStructures/Geometria/Task/Geometria1.txt
-Каждую фигуру поместить в отдельный блок #ifdef...#endif
+1. Вывести на экран все фигуры из этого файла: 
+   https://github.com/okovtun/BV_011/blob/master/ControlStructures/Geometria/Task/Geometria1.txt
+   Каждую фигуру поместить в отдельный блок #ifdef...#endif
+2. https://github.com/okovtun/BV_011/blob/master/ControlStructures/Geometria/Task/ChessBoard.jpg
 
 DONE:
 1. Оптимизировать код Fibonacci;
