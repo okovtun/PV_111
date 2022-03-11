@@ -3,6 +3,11 @@ https://www.youtube.com/watch?v=Wvi83_sg_uA&list=PLeqyOOqxeiIPpnd7D0trsnWlc1vVZP
 https://meet.google.com/mho-khdw-fhj
 
 TODO:
+Вывести на экран все фигуры из этого файла: 
+https://github.com/okovtun/BV_011/blob/master/ControlStructures/Geometria/Task/Geometria1.txt
+Каждую фигуру поместить в отдельный блок #ifdef...#endif
+
+DONE:
 1. Оптимизировать код Fibonacci;
 2. Вывести на экран таблицу умножения;
 3. Вывести на экран таблицу Пифагора;

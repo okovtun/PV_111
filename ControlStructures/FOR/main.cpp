@@ -100,9 +100,10 @@ void main()
 	for (double a = 0, b = 1, c = a + b, i = 0; i < n; i++)
 	{
 		cout << a << "\n";
-		a = b;
+		/*a = b;
 		b = c;
-		c = a + b;
+		c = a + b;*/
+		c = (a = b) + (b = c);
 	}
 }
 
