@@ -3,7 +3,7 @@ https://www.youtube.com/watch?v=Wvi83_sg_uA&list=PLeqyOOqxeiIPpnd7D0trsnWlc1vVZP
 https://meet.google.com/mho-khdw-fhj
 
 TODO:
-1. Вывести на экран все фигуры из этого файла: 
+1. Вывести на экран все фигуры из этого файла: DONE
    https://github.com/okovtun/BV_011/blob/master/ControlStructures/Geometria/Task/Geometria1.txt
    Каждую фигуру поместить в отдельный блок #ifdef...#endif
 2. https://github.com/okovtun/BV_011/blob/master/ControlStructures/Geometria/Task/ChessBoard.jpg

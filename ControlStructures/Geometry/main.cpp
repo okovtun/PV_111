@@ -7,6 +7,8 @@ using namespace std;
 //#define TRIANGLE_2
 //#define TRIANGLE_3
 #define TRIANGLE_4
+//#define ROMBUS
+//#define TERNARY
 
 void main()
 {
@@ -56,5 +58,43 @@ void main()
 	}
 #endif // TRIANGLE_3
 
+#ifdef ROMBUS
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = i; j < n; j++)cout << " ";
+		cout << "/";
+		for (int j = 0; j < i * 2; j++)cout << " ";
+		cout << "\\";
+		cout << endl;
+	}
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j <= i; j++)cout << " ";
+		cout << "\\";
+		for (int j = 0; j < (n - 1 - i) * 2; j++)cout << " ";
+		cout << "/";
+		cout << endl;
+	}
+#endif // ROMBUS
+
+#ifdef TERNARY
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			//cout << "* ";
+			//if (i % 2 == j % 2)
+			//if ((i + j) % 2 == 0)cout << "+ "; else cout << "- ";
+			//(i + j) % 2 == 0 ? cout << "+ " : cout << "- ";
+			cout << ((i + j) % 2 == 0 ? "+ " : "- ");
+		}
+		cout << endl;
+	}
+#endif // TERNARY
+
+	for (int i = 0; i < n; i++)
+		for (int j = 0; j <= n; j++)
+			cout << (j == n ? "\n" : (i + j) % 2 == 0 ? "+ " : "- ");
+	cout << endl;
 
 }
