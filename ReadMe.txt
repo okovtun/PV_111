@@ -3,6 +3,10 @@ https://www.youtube.com/watch?v=Wvi83_sg_uA&list=PLeqyOOqxeiIPpnd7D0trsnWlc1vVZP
 https://meet.google.com/mho-khdw-fhj
 
 TODO:
+В проекте Arrays посчитать сумму элементов массива, среднее арифметическое,
+а также найти минимальное и максимальное значение в массиве;
+
+DONE:
 1. Зарегистрироваться на github.com;
 ---------------------------------------
 2. Сделать большую шахматную доску ASCII-символами и в рамке;
