@@ -3,6 +3,9 @@ https://www.youtube.com/watch?v=Wvi83_sg_uA&list=PLeqyOOqxeiIPpnd7D0trsnWlc1vVZP
 https://meet.google.com/mho-khdw-fhj
 
 TODO:
+Выполнить циклический сдвиг массива на заданное число элементов вправо.
+
+DONE:
 В проекте Arrays посчитать сумму элементов массива, среднее арифметическое,
 а также найти минимальное и максимальное значение в массиве;
 
