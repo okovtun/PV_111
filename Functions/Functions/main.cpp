@@ -7,7 +7,8 @@ int Add(int a, int b);	//Прототип функции (Объявление �
 //на момент вызова
 int Sub(int a, int b);	//Прототип состоит только из заголовка функции.
 int Mul(int a, int b/*принимаемые параметры*/);
-double Div(int a, int b);
+double Div(double a, int b);
+double Power(double a, int n);
 //						UNRESOLVED EXTERNALS
 void main()
 {
