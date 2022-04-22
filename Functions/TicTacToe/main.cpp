@@ -5,6 +5,7 @@ using namespace std;
 #define VERTICAL_SHIFT		"\n\n\n\n\n\n\n"
 #define HORIZONTAL_SHIFT	"\t\t\t\t\t"
 
+void InitField(char field[], const int n, char player);
 void PrintField(char field[], const int n, char player);
 void Move(char field[], const int n, char player);
 void Check(char field[], const int n, char player);
@@ -15,9 +16,19 @@ void main()
 	const int n = 9;
 	char field[n] = {};
 	//for (int i = 0; i < n; i++)field[i] = i + '1';//49 - ASCII-код символа 1
-	PrintField(field, n, '0');
+	do
+	{
+		InitField(field, n, '0');
+		//PrintField(field, n, '0');
+		cout << "Еще разочек? Да - anykey, Нет - Escape" << endl;
+	} while (_getch() != 27);
 }
 
+void InitField(char field[], const int n, char player)
+{
+	for (int i = 0; i < n; i++)field[i] = 0;
+	PrintField(field, n, player);
+}
 void PrintField(char field[], const int n, char player)
 {
 	//system("calc");
@@ -50,7 +61,7 @@ void Move(char field[], const int n, char player)
 		if (key<'1' || key>'9')cout << "\aВы плохо нажимаете на кнопки, будьте внимательны\n";
 		//	\a (alert/alarm) - вывод в консоль звукового сигнала
 		else if (field[key - 49] != 0 && field[key - 49] != ' ')cout << "\aКлетка уже занята\n";
-	} while (key<'1' || key>'9' || field[key - 49] != 0 && field[key - 49] != ' ');
+	} while ((key<'1' || key>'9') || field[key - 49] != 0 && field[key - 49] != ' ');
 	field[key - 49] = player;
 	PrintField(field, n, player/* == 'X' ? '0' : 'X'*/);
 	//Check(field, n, player);
@@ -71,6 +82,21 @@ void Check(char field[], const int n, char player)
 	if (game_over)
 	{
 		cout << player << " победил!\n";
+		return;
+	}
+	bool draw = true;	//Изначально предполагаем что у нас ничья, 
+	//но это нужно проверить:
+	for (int i = 0; i < n; i++)
+	{
+		if (field[i] == 0 || field[i] == ' ')
+		{
+			draw = false;
+			break;
+		}
+	}
+	if (draw)
+	{
+		cout << "Ничья" << endl;
 		return;
 	}
 	//PrintField(field, n, player == 'X' ? '0' : 'X');
