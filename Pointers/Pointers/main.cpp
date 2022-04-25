@@ -1,10 +1,16 @@
 ﻿//Pointers
 #include<iostream>
 using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
+
+//#define POINTERS_BASICS
 
 void main()
 {
 	setlocale(LC_ALL, "");
+#ifdef POINTERS_BASICS
 	int a = 2;		//объявление переменной
 	int* pa = &a;	//объявление указателя
 	//p - pointer (Венгерская нотация)
@@ -28,6 +34,23 @@ void main()
 	//double* - указатель на double
 	//char - char
 	//char* - указатель на char
+#endif // POINTERS_BASICS
+
+	const int n = 5;
+	int arr[n] = { 3,5,-8,13,21 };
+	cout << arr << endl;
+	cout << *arr << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr + i << "\t";
+		//cout << *(arr + i) << "\t";
+	}
+	cout << endl;
+	for (int* p_arr = arr; *p_arr != 0xCCCCCCCC; p_arr++)
+	{
+		cout << *p_arr << "\t";
+	}
+	cout << endl;
 }
 
 /*
@@ -36,3 +59,17 @@ void main()
 * - Dereference operator(Оператор разыменования)
 ----------------------------------------
 */
+
+/*
+----------------------------------------
++
+-
+++
+--
+char	- 1 Byte
+short	- 2 Byte
+int		- 4 Byte
+double	- 8 Byte
+----------------------------------------
+*/
+
