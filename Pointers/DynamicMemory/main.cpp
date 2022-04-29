@@ -1,4 +1,4 @@
-//DynamicMemory
+п»ї//DynamicMemory
 #include<iostream>
 using namespace std;
 
@@ -12,18 +12,18 @@ void main()
 	setlocale(LC_ALL, "");
 	//new
 	int n;
-	cout << "Введите размер массива: "; cin >> n;
+	cout << "Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР°: "; cin >> n;
 
 	int* arr = new int[n];
 	cout << typeid(arr).name() << endl;
 	FillRand(arr, n);
 	Print(arr, n);
 	int value;
-	cout << "Введите добавляемое значение: "; cin >> value;
+	cout << "Р’РІРµРґРёС‚Рµ РґРѕР±Р°РІР»СЏРµРјРѕРµ Р·РЅР°С‡РµРЅРёРµ: "; cin >> value;
 	arr[n] = value;
 	n++;
 	Print(arr, n);
-	delete[] arr;//Heap (Куча)
+	delete[] arr;//Heap (РљСѓС‡Р°)
 	//Print(arr, n);
 	//Memory leak
 
@@ -47,7 +47,7 @@ void Print(int* arr, const int n)
 	cout << typeid(arr).name() << endl;	//RTTI - Runtime Type Information
 	for (int i = 0; i < n; i++)
 	{
-		//[] - оператор индексирования (subscript operator)
+		//[] - РѕРїРµСЂР°С‚РѕСЂ РёРЅРґРµРєСЃРёСЂРѕРІР°РЅРёСЏ (subscript operator)
 		cout << arr[i] << tab;
 	}
 	cout << endl;
