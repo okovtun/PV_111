@@ -6,7 +6,7 @@ using namespace std;
 
 void FillRand(int arr[], const int n);
 void Print(int* arr, const int n);
-int* push_back(int arr[], int n, int value);
+int* push_back(int arr[], int& n, int value);
 
 void main()
 {
@@ -25,7 +25,7 @@ void main()
 	int value;
 	cout << "Введите добавляемое значение: "; cin >> value;
 	arr = push_back(arr, n, value);
-	Print(arr, n+1);
+	Print(arr, n);
 	delete[] arr;	//Heap (Куча)
 	//Print(arr, n);
 	//Memory leak
@@ -56,7 +56,7 @@ void Print(int* arr, const int n)
 	cout << endl;
 }
 
-int* push_back(int arr[], int n, int value)
+int* push_back(int arr[], int& n, int value)
 {
 	//1. Создаем буферный массив нужного размера, в данном случае на 1 элемент больше:
 	int* buffer = new int[n + 1];
