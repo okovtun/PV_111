@@ -1,16 +1,27 @@
 ﻿//DynamicMemory
 #include<iostream>
 using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
 
 #define tab "\t"
 
 void FillRand(int arr[], const int n);
+void FillRand(int** arr, const int rows, const int cols);
+
 void Print(int* arr, const int n);
+void Print(int** arr, const int rows, const int cols);
+
 int* push_back(int arr[], int& n, int value);
+
+//#define DYNAMIC_MEMORY_1
+#define DYNAMIC_MEMORY_2
 
 void main()
 {
 	setlocale(LC_ALL, "");
+#ifdef DYNAMIC_MEMORY_1
 	//new
 	int n;
 
@@ -36,6 +47,33 @@ void main()
 	FillRand(brr, SIZE);
 	Print(brr, SIZE);
 	cout << sizeof(int) << endl;*/
+#endif // DYNAMIC_MEMORY_1
+
+	int rows;	//количество строк двумерного динамического массива
+	int cols;	//количество элементов строки
+	cout << "Введите количество строк: ";				cin >> rows;
+	cout << "Введите количество элементов строки: ";	cin >> cols;
+
+	//1) Создаем массив указателей:
+	int** arr = new int*[rows];
+	//2) Создаем строки двумерного массива:
+	for (int i = 0; i < rows; i++)
+	{
+		arr[i] = new int[cols] {};
+	}
+
+	//3) Обращение к элементам двумерного динамического массива:
+	//FillRand(arr, rows, cols);
+	Print(arr, rows, cols);
+	
+	//4) Удаление массива:
+	//4.1. Удаляем строки:
+	for (int i = 0; i < rows; i++)
+	{
+		delete[] arr[i];
+	}
+	//4.2. Удаляем массив указателей:
+	delete[] arr;
 }
 
 void FillRand(int arr[], const int n)
@@ -43,6 +81,16 @@ void FillRand(int arr[], const int n)
 	for (int i = 0; i < n; i++)
 	{
 		*(arr + i) = rand() % 100;
+	}
+}
+void FillRand(int** arr, const int rows, const int cols)
+{
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			arr[i][j] = rand() % 100;
+		}
 	}
 }
 void Print(int* arr, const int n)
@@ -54,6 +102,17 @@ void Print(int* arr, const int n)
 		cout << arr[i] << tab;
 	}
 	cout << endl;
+}
+void Print(int** arr, const int rows, const int cols)
+{
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
 }
 
 int* push_back(int arr[], int& n, int value)

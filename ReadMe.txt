@@ -10,6 +10,26 @@ http://cplusplus.com/doc/tutorial/pointers/
 https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%BD%D0%B3%D0%B5%D1%80%D1%81%D0%BA%D0%B0%D1%8F_%D0%BD%D0%BE%D1%82%D0%B0%D1%86%D0%B8%D1%8F
 
 TODO:
+1. Вывести двумерный динамический массив на экран используя арифметику указателей и оператор разыменования;
+2. В проект DynamicMemory добавить следующие функции:
+	??? Allocate(???);	//Выделяет память под двумерный динамический массив
+	??? Clear(???);		//Очищает память, занимаемую двумерным динамическим массивом
+
+	??? push_row_back(???);
+	??? push_row_front(???);
+	??? insert_row(???);
+	??? pop_row_back(???);
+	??? pop_row_front(???);
+	??? erase_row(???);
+
+	??? push_col_back(???);
+	??? push_col_front(???);
+	??? insert_col(???);
+	??? pop_col_back(???);
+	??? pop_col_front(???);
+	??? erase_col(???);
+
+DONE:
 В проект DynamicMemory добавить следующие функции:
 	??? insert(???);	//Вставляет значение в массив по указанному индексу
 	??? pop_back(???);	//Удаляет последний элемент массива
